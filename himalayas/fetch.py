@@ -180,6 +180,7 @@ def _attempts(label, send):
         except Exception as e:
             last = HimalayasUpstreamError(f"request failed on {label}: {type(e).__name__}: {e}")
         _drop_session(key)
+        _local.exit_ready = False       # the next attempt (and the next call) takes a fresh exit
         print(f"himalayas: attempt {attempt}/{attempts} on {label} failed: {last}")
         if attempt < attempts:
             time.sleep(0.5 * attempt)
