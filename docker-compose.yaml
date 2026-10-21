@@ -1,0 +1,13 @@
+services:
+  himalayas-scraper:
+    build: .
+    restart: unless-stopped
+    shm_size: "1gb"
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      # Optional — a free Himalayas API key raises the feed allowance to 60/min, 10k/day.
+      # - HIMALAYAS_API_KEY=your-key
+      # Optional — a STICKY proxy for every request; leave unset on a normal connection.
+      # - HIMALAYAS_PROXY=http://user:pass@host:port

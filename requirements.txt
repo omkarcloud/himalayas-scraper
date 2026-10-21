@@ -1,0 +1,10 @@
+bottle
+cheroot
+curl_cffi
+marshmallow
+beautifulsoup4
+lxml
+patchright
+psutil
+pyvirtualdisplay
+pytest
